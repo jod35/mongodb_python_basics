@@ -59,10 +59,16 @@ def sort_products():
         pprint(product)
         print('\n')
 
+def limit():
+    lmt=int(input("enter your limit: "))
+    all_products=products.find().limit(lmt)
+    for product in all_products:
+        pprint(product)
+        print('\n')
 
 
 while True:
-    print("Welcome to the Product App!!\n1.Add A product\n2.View all products\n3.Search according to name\n4.Sort Items\n0.Exit")
+    print("Welcome to the Product App!!\n1.Add A product\n2.View all products\n3.Search according to name\n4.Sort Items\n5.Search with a limit\n0.Exit")
     choice=int(input("ENTER YOU CHOICE: "))
     if choice ==1:
         create_product()
@@ -72,6 +78,8 @@ while True:
         conditionn_search()
     elif choice ==4:
         sort_products()
+    elif choice ==5:
+        limit()
     elif choice ==0:
         break
     else:
