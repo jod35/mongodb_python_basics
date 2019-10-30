@@ -69,3 +69,19 @@ result1=dogs.insert_many(dogs_array)
 print(result1)
 
 # <pymongo.results.InsertManyResult object at 0x03046738>
+
+# printing inserted ids
+# for object_id in result1.inserted_ids:
+#     print(object_id)
+
+# <pymongo.results.InsertManyResult object at 0x02E4F2D8>
+# 5db9d4ae0deea34f567c5aba
+# 5db9d4ae0deea34f567c5abb
+# 5db9d4ae0deea34f567c5abc
+# 5db9d4ae0deea34f567c5abd
+# 5db9d4ae0deea34f567c5abe
+
+#retriving one document
+dog =dogs.find_one()
+print(dog)
+# {'_id': ObjectId('5db9cf8bd9fd9777d9c879e2'), 'name': 'Doggy', 'age': 3, 'specie': 'German Shepherd', 'owner': 'jona'}
