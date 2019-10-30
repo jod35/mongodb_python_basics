@@ -29,7 +29,7 @@ def create_product():
     product_info['markup']=markup
     product_info['selling_price']=gross_price
 
-    print(product_info)
+   
 
     products_list=[]
 
@@ -41,15 +41,37 @@ def create_product():
 def retrieve_products():
     all_products=products.find()
     for product in all_products:
-        pprint(product,"\n")
+        pprint(product)
+        print('\n')
+
+def conditionn_search():
+    name=input("enter the name of the product: ")
+    one_product=products.find({'name':name})
+    for o in one_product:
+        if o :
+            pprint(o)
+        else:
+            print("No document with such name")
+
+def sort_products():
+    all_products=products.find().sort('name',1) #ascending order
+    for product in all_products:
+        pprint(product)
+        print('\n')
+
+
 
 while True:
-    print("Welcome to the Product App!!\n1.Add A product\n2.View all products\n0.Exit")
+    print("Welcome to the Product App!!\n1.Add A product\n2.View all products\n3.Search according to name\n4.Sort Items\n0.Exit")
     choice=int(input("ENTER YOU CHOICE: "))
     if choice ==1:
         create_product()
     elif choice ==2:
         retrieve_products()
+    elif choice ==3:
+        conditionn_search()
+    elif choice ==4:
+        sort_products()
     elif choice ==0:
         break
     else:
