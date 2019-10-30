@@ -13,7 +13,19 @@ db=client['mydb']
 #creating a collection in the database
 dogs=db.dogs
 
-print?(dogs)
+# print(dogs)
+# Collection(Database(MongoClient(host=['localhost:27017'], document_class=dict, tz_aware=False, connect=True), 'mydb'), 'dogs')
 
+#creating a docment
 
-#
+dog ={
+    'name':"Doggy",
+    'age':3,
+    'specie':'German Shepherd',
+    'owner':'jona'
+}
+
+#insert the document in the database
+result=dogs.insert_one(dog)
+
+print(result)
