@@ -214,3 +214,4 @@ many_dogs=dogs.find()
 #  'owner': 'Jeremiah',
 #  'specie': 'Rotweiler'}
 
+#filtering according to
